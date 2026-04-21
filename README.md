@@ -199,17 +199,3 @@ These results and visualizations highlight the superiority of transformer-based 
 
 ---
 
-## 🧰 **Repository Structure**
-
-```
-<project-name>/
-|-- data/                             # Raw and processed datasets.
-|-- llm_absa_models/                  # ABSA extractor and pipeline scripts.
-    |-- mistral_7b_local/             # Directory for storing Mistral model files.
-    |-- llm_absa_extractor.py         # Aspect-based sentiment model extractor.
-    |-- llm_absa_run.py               # Full pipeline runner script.
-    |-- app_hybrid_llm.py             # Streamlit dashboard app.
-|-- transformer_models/               # Pretrained ClinicalBERT and RoBERTa fine-tuning code.
-|-- absa_output/                      # Generated results from model evaluation.
-|-- requirements.txt                  # Python dependencies.
-|-- README.md                         # Project documentation (this file).
