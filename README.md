@@ -113,12 +113,83 @@ Access the local dashboard at `http://localhost:8501/`.
 ---
 
 ## 📊 **Results**
-- Baseline models achieved F1-scores between **[X%] and [Y%]**.
-- Fine-tuned ClinicalBERT achieved an F1-score of **[Z.X%]**.
-- Fine-tuned RoBERTa outperformed with an F1-score of **[W.X%]** (optional based on actual results).
-- Dashboard visualizations provide actionable insights into model performance.
+
+This section provides the details of the evaluation metrics for both **Baseline Models** and **Transformer-Based Models** on the real-world test set. The results highlight the improvements achieved by deep learning models for aspect-based sentiment analysis of healthcare reviews.
 
 ---
+
+### **Baseline Models**
+#### 1. **Logistic Regression (TF-IDF):**
+- **Accuracy**: **95.21%**
+- **Negative Class (Complaints):**
+  - **Precision**: **40%**
+  - **Recall**: **96%**
+  - **F1-Score**: **56%**
+
+#### 2. **XGBoost (TF-IDF):**
+- **Accuracy**: **94.04%**
+- **Negative Class (Complaints):**
+  - **Precision**: **34%**
+  - **Recall**: **93%**
+  - **F1-Score**: **50%**
+
+---
+
+### **Transformer-Based Models**
+#### 3. **ClinicalBERT (Fine-Tuned Model):**
+- **Accuracy**: **97.91%**
+- **Negative Class (Complaints):**
+  - **Precision**: **61.59%**
+  - **Recall**: **93.98%**
+  - **F1-Score**: **74.41%**
+
+#### 4. **RoBERTa (Twitter-RoBERTa Base):**
+- **Accuracy**: **96.84%**
+- **Negative Class (Complaints):**
+  - **Precision**: **50.68%**
+  - **Recall**: **96.21%**
+  - **F1-Score**: **66.39%**
+
+---
+
+### **Key Takeaways**
+1. **Baseline Models Established a Good Benchmark**:
+   - Logistic Regression achieved high **accuracy (95.21%)** and **high negative recall (96%)**, proving it could detect most complaints.
+   - However, **low negative precision (40%)** shows challenges with false positives due to the inability to understand context or negations.
+
+2. **Deep Learning Outperformed Traditional Models**:
+   - Both **ClinicalBERT** and **RoBERTa** significantly outperformed the baselines, improving **Negative F1-Scores** to **74.41%** and **66.39%**, respectively.
+   - ClinicalBERT handled domain-specific medical jargon better than RoBERTa, resulting in substantially better **precision (61.59%)** for the negative class.
+
+3. **Visualization and Dashboard**:
+   - An **interactive dashboard** was built using Streamlit to compare model metrics and visualize results.
+   - It includes features for real-time predictions using the fine-tuned transformer models.
+
+---
+
+### **Visualization Example**
+
+#### 1. **Model Comparison Bar Chart**
+![Model Comparison](path/to/your/bar_chart_image.png)
+
+This bar chart displays the performance of all models on key metrics like Accuracy, Precision, Recall, and F1-Score.
+
+#### 2. **Live Inference**
+The dashboard includes a "Live Inference" tab where users can test custom healthcare reviews. The models analyze the review's sentiment and provide predictions in real-time.
+
+**Example Input:**
+```
+"The doctor was nice but prescribed heavy antibiotics which gave my baby horrible side effects."
+```
+
+**ClinicalBERT Prediction:**
+```
+"Negative Sentiment"
+```
+
+---
+
+These results and visualizations highlight the superiority of transformer-based models, like ClinicalBERT, for healthcare-related sentiment classification tasks while showcasing the improvements over traditional baselines.
 
 ## 📌 **Highlights**
 - Handled end-to-end **data preprocessing**, including cleaning, tokenization, and feature engineering.
